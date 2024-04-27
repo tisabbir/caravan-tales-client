@@ -20,7 +20,7 @@ const Banner = ({banners}) => {
     },
   };
     return (
-        <div>
+        <div className='mt-12'>
            <Swiper
         pagination={pagination}
         modules={[Pagination]}
