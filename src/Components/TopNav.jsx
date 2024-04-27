@@ -1,17 +1,35 @@
+import { NavLink } from "react-router-dom";
 
 
 const TopNav = () => {
     return (
         <div>
-            <div className="navbar bg-base-100 width-fixer">
+            <div className="navbar bg-base-100 width-fixer rounded-b-xl">
   <div className="flex-1">
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-xl">Caravan Tales</a>
   </div>
   <div className="flex-none gap-2">
     <div className="form-control">
       <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
     </div>
+    
+    <div>
+        {/* login register */}
+        
+        <button className="btn">
+        <NavLink to={"/login"}>Login</NavLink>
+      </button>
+      <button className="btn">
+        <NavLink to={"/register"}>Register</NavLink>
+      </button>
+    </div>
+
+
     <div className="dropdown dropdown-end">
+        
+
+
+        {/* avatar */}
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
           <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />

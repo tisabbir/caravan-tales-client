@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 const Header = () => {
   const navLinks = (
@@ -7,17 +8,26 @@ const Header = () => {
         <NavLink to={"/"}>Home</NavLink>
       </li>
       <li>
+        <NavLink to={"/all"}>All Tourist Spots</NavLink>
+      </li>
+      <li>
+        <NavLink to={"/add"}>Add Tourist Spots</NavLink>
+      </li>
+      <li>
+        <NavLink to={"/list"}>My List</NavLink>
+      </li>
+      {/* <li>
         <NavLink to={"/login"}>Login</NavLink>
       </li>
       <li>
         <NavLink to={"/register"}>Register</NavLink>
-      </li>
+      </li> */}
     </>
   );
 
   return (
     <div>
-      <div className="navbar bg-base-100 width-fixer">
+      <div className="navbar width-fixer">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -43,13 +53,16 @@ const Header = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Caravan Tales</a>
+          {/* <a className="btn btn-ghost text-xl">Caravan Tales</a> */}
+          <ul className="menu menu-horizontal px-1 hidden lg:flex">{navLinks}</ul>
+
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+          <ul className="menu menu-horizontal px-1 lg:hidden ">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+         <MdDarkMode className="text-3xl" />
+         <MdLightMode className="text-3xl" />
         </div>
       </div>
     </div>
