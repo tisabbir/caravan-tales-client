@@ -8,6 +8,8 @@ import "./index.css";
 import Home from "./Layouts/Home";
 import Root from "./routes/Root";
 import AuthProvider from "./Providers/AuthProvider";
+import AddSpot from "./Components/AddSpot";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/add",
+        element: <PrivateRoute><AddSpot /></PrivateRoute>,
       },
     ],
   },

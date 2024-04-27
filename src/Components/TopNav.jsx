@@ -1,7 +1,20 @@
 import { NavLink } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
+import { Tooltip } from "react-tooltip";
 
 
 const TopNav = () => {
+  const {user, logOut,  loading} = useAuth();
+  console.log('from navbar', user);
+  const handleLogOut = () => {
+    logOut()
+    .then(() => {
+      console.log('Successfully logged out')
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
     return (
         <div>
             <div className="navbar bg-base-100 width-fixer rounded-b-xl">
@@ -13,7 +26,37 @@ const TopNav = () => {
       <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
     </div>
     
-    <div>
+
+    {
+      user ? 
+      
+      <div className="dropdown dropdown-end">
+        
+
+
+      {/* avatar */}
+    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+      <div className="w-10 rounded-full">
+        
+
+        <a
+  data-tooltip-id="my-tooltip-data-html"
+  data-tooltip-html=""
+>
+<img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
+</a>
+      </div>
+    </div>
+    <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+      <li>
+        <a className="justify-between">
+         {user.displayName}
+          
+        </a>
+      </li>
+      <li><a onClick={handleLogOut} >Logout</a></li>
+    </ul>
+  </div> :  <div>
         {/* login register */}
         
         <button className="btn">
@@ -23,31 +66,16 @@ const TopNav = () => {
         <NavLink to={"/register"}>Register</NavLink>
       </button>
     </div>
+    }
+    
 
 
-    <div className="dropdown dropdown-end">
-        
+    
 
 
-        {/* avatar */}
-      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-        </div>
-      </div>
-      <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-        <li>
-          <a className="justify-between">
-            Profile
-            <span className="badge">New</span>
-          </a>
-        </li>
-        <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
-      </ul>
-    </div>
   </div>
 </div>
+<Tooltip id="my-tooltip-data-html" />
         </div>
     );
 };
