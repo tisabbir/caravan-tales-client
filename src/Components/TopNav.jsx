@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import { Tooltip } from "react-tooltip";
 
@@ -19,7 +19,8 @@ const TopNav = () => {
         <div>
             <div className="navbar bg-base-100 width-fixer rounded-b-xl">
   <div className="flex-1">
-    <a className="btn btn-ghost text-xl">Caravan Tales</a>
+    <Link to={'/'} data-tooltip-id="my-tooltip-multiline"
+  data-tooltip-html="Caravan Tales: <br /> Your go-to hub for <br /> discovering amazing tourist spots <br /> across Central Asia." className="btn btn-ghost text-xl">Caravan Tales</Link>
   </div>
   <div className="flex-none gap-2">
     <div className="form-control">
@@ -41,7 +42,7 @@ const TopNav = () => {
 
         <a
   data-tooltip-id="my-tooltip-data-html"
-  data-tooltip-html=""
+  data-tooltip-html="Click to get the logout option."
 >
 <img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
 </a>

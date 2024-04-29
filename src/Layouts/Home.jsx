@@ -3,6 +3,7 @@ import MyComponent from "../Components/MyComponent";
 import ReactToolTip from "../Components/ReactToolTip";
 import Banner from "../Components/Banner";
 import BannerText from "../Components/BannerText";
+import TouristSpots from "../Components/TouristSpots";
 
 const Home = () => {
   const data = useLoaderData();
@@ -18,8 +19,8 @@ const Home = () => {
                 </div>
             </div>
             {/* banner containr */}
-      <MyComponent />
-      <ReactToolTip />
+            <TouristSpots />
+
     </div>
   );
 };

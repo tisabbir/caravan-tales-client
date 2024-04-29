@@ -10,6 +10,9 @@ import Root from "./routes/Root";
 import AuthProvider from "./Providers/AuthProvider";
 import AddSpot from "./Components/AddSpot";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import MyList from "./Components/MyList";
+import AllList from "./Components/AllList";
+import SpotDetail from "./Components/SpotDetail";
 
 const router = createBrowserRouter([
   {
@@ -31,8 +34,20 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
+        path: "/all",
+        element: <AllList />,
+      },
+      {
         path: "/add",
         element: <PrivateRoute><AddSpot /></PrivateRoute>,
+      },
+      {
+        path: "/list",
+        element: <PrivateRoute><MyList /></PrivateRoute>,
+      },
+      {
+        path: "/details",
+        element: <PrivateRoute><SpotDetail /></PrivateRoute>,
       },
     ],
   },
