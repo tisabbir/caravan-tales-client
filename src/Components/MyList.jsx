@@ -79,7 +79,7 @@ const MyList = () => {
     }
 
     return (
-        <div>
+        <div> 
             <div className="mt-12 width-fixer">
 
 <h1 className="text-3xl font-bold text-center mb-2">Tourist Spots That You Have Added</h1>
@@ -137,6 +137,8 @@ const MyList = () => {
 
 </div>
 </div>
+
+
         </div>
     );
 };

@@ -25,7 +25,7 @@ const Countries = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  ">
            
            {
-            countries.map((country)=><div key={country.id}><div className="card w-96 bg-base-100 shadow-xl">
+            countries.map((country)=><div key={country.id}><div className="card w-96 bg-base-100 shadow-xl mx-auto">
             <figure className="px-10 pt-10">
               <img src={country.image} alt="Shoes" className="rounded-xl" />
             </figure>

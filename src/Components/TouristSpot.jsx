@@ -19,7 +19,7 @@ const TouristSpot = ({spot}) => {
       } = spot;
 
     return (
-        <div>
+        <div className="mx-auto">
             <div>
                 <div className="w-80 p-4 bg-[#daedef] rounded-lg text-center space-y-2">
            <div className="relative">
