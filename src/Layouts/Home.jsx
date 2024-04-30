@@ -5,6 +5,9 @@ import Banner from "../Components/Banner";
 import BannerText from "../Components/BannerText";
 import TouristSpots from "../Components/TouristSpots";
 import Countries from "../Components/Countries";
+import { FaW } from "react-icons/fa6";
+import FAQ from "../Components/FAQ";
+import Review from "../Components/Review";
 
 const Home = () => {
   const data = useLoaderData();
@@ -22,6 +25,8 @@ const Home = () => {
             {/* banner containr */}
             <TouristSpots />
             <Countries />
+            <FAQ />
+            <Review />
 
     </div>
   );
