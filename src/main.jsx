@@ -14,6 +14,7 @@ import MyList from "./Components/MyList";
 import AllList from "./Components/AllList";
 import SpotDetail from "./Components/SpotDetail";
 import AllListSpotDetails from "./Components/AllListSpotDetails";
+import UpdateSpot from "./Components/UpdateSpot";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/add",
         element: <PrivateRoute><AddSpot /></PrivateRoute>,
+      },
+      {
+        path: "/update",
+        element: <PrivateRoute><UpdateSpot /></PrivateRoute>,
       },
       {
         path: "/list",

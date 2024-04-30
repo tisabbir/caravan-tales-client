@@ -4,6 +4,7 @@ import ReactToolTip from "../Components/ReactToolTip";
 import Banner from "../Components/Banner";
 import BannerText from "../Components/BannerText";
 import TouristSpots from "../Components/TouristSpots";
+import Countries from "../Components/Countries";
 
 const Home = () => {
   const data = useLoaderData();
@@ -20,6 +21,7 @@ const Home = () => {
             </div>
             {/* banner containr */}
             <TouristSpots />
+            <Countries />
 
     </div>
   );

@@ -1,14 +1,18 @@
 import Swal from "sweetalert2";
+import useAuth from "../Hooks/useAuth";
 
 
 const AddSpot = () => {
+
+    const {user} = useAuth();
+    console.log('user from add', user);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
 
-        const userName = form.name.value;
-        const userEmail= form.email.value;
+        const userName = user.displayName;
+        const userEmail= user.email;
         const image = form.url.value;
         const country_Name = form.country.value;
         const tourists_spot_name = form.spot.value;
@@ -74,9 +78,11 @@ const AddSpot = () => {
                  <input name="season" type="text" placeholder="Seasonality" className="input input-bordered w-full  " />
                  <input name="time" type="text" placeholder="Travel Time" className="input input-bordered w-full  " />
                  <input name="visitors" type="text" placeholder="Travel Visitors Per Year" className="input input-bordered w-full  " />
-                 <input name="email" type="email" placeholder="User Email" className="input input-bordered w-full  " />
-                 <input name="name" type="text" placeholder="User Name" className="input input-bordered w-full  " />
-                 <input type="submit" value={"ADD"} className="btn w-full bg-green-400" />
+                 
+                 {/* <input name="email" type="email" defaultValue={user.email} className="input input-bordered w-full  " />
+                 <input name="name" type="text" defaultValue={user.displayName} className="input input-bordered w-full  " /> */}
+
+                 <input type="submit" value={"ADD"} className="btn w-full bg-green-400 col-span-1 md:col-span-2 lg:col-span-3" />
 
 
             </form>
