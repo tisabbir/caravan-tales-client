@@ -13,6 +13,7 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import MyList from "./Components/MyList";
 import AllList from "./Components/AllList";
 import SpotDetail from "./Components/SpotDetail";
+import AllListSpotDetails from "./Components/AllListSpotDetails";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
         path: "/details/:id",
         element: <PrivateRoute><SpotDetail /></PrivateRoute>,
         loader: ({params})=>fetch(`http://localhost:5000/spots/${params.id}`)
+      },
+      {
+        path: "/alldetails/:id",
+        element: <PrivateRoute><AllListSpotDetails /></PrivateRoute>,
+        loader: ({params})=>fetch(`http://localhost:5000/allspots/${params.id}`)
       },
     ],
   },
