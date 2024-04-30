@@ -11,7 +11,7 @@ const MyList = () => {
 
     const [spots, setSpots] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/allspots')
+        fetch('https://caravan-tales-server.vercel.app/allspots')
         .then(res => res.json())
         .then(data => {
             console.log(data);
@@ -55,7 +55,7 @@ const MyList = () => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/allspots/${id}`, {
+                fetch(`https://caravan-tales-server.vercel.app/allspots/${id}`, {
                     method: "DELETE"
                 })
                 .then(res => res.json())

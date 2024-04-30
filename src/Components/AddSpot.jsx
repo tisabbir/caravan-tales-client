@@ -37,7 +37,7 @@ const AddSpot = () => {
             userName
           } 
         console.log(userSpot);
-          fetch('http://localhost:5000/allspots', {
+          fetch('https://caravan-tales-server.vercel.app/allspots', {
             method: "POST",
             headers: {
                 'content-type' : "application/json"

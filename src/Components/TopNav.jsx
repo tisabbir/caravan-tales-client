@@ -60,12 +60,12 @@ const TopNav = () => {
   </div> :  <div>
         {/* login register */}
         
-        <button className="btn">
-        <NavLink to={"/login"}>Login</NavLink>
-      </button>
-      <button className="btn">
-        <NavLink to={"/register"}>Register</NavLink>
-      </button>
+        
+        <NavLink to={"/login"} className="btn">Login</NavLink>
+     
+      
+        <NavLink to={"/register"} className="btn">Register</NavLink>
+     
     </div>
     }
     

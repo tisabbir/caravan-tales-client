@@ -54,12 +54,12 @@ const router = createBrowserRouter([
       {
         path: "/details/:id",
         element: <PrivateRoute><SpotDetail /></PrivateRoute>,
-        loader: ({params})=>fetch(`http://localhost:5000/spots/${params.id}`)
+        loader: ({params})=>fetch(`https://caravan-tales-server.vercel.app/spots/${params.id}`)
       },
       {
         path: "/alldetails/:id",
         element: <PrivateRoute><AllListSpotDetails /></PrivateRoute>,
-        loader: ({params})=>fetch(`http://localhost:5000/allspots/${params.id}`)
+        loader: ({params})=>fetch(`https://caravan-tales-server.vercel.app/allspots/${params.id}`)
       },
     ],
   },

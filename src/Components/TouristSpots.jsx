@@ -5,7 +5,7 @@ const TouristSpots = () => {
 
     const [spots, setSpots] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/spots')
+        fetch('https://caravan-tales-server.vercel.app/spots')
         .then(res => res.json())
         .then(data => {
             console.log(data);

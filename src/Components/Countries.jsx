@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import TouristSpot from "./TouristSpot";
 
 const Countries = () => {
 
     const [countries, setSpots] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/country')
+        fetch('https://caravan-tales-server.vercel.app/country')
         .then(res => res.json())
         .then(data => {
             console.log(data);
