@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 
 
 const AddSpot = () => {
@@ -6,23 +7,53 @@ const AddSpot = () => {
         e.preventDefault();
         const form = e.target;
 
-        const name = form.name.value;
-        const email = form.email.value;
+        const userName = form.name.value;
+        const userEmail= form.email.value;
         const image = form.url.value;
-        const country = form.country.value;
-        const spot = form.spot.value;
+        const country_Name = form.country.value;
+        const tourists_spot_name = form.spot.value;
         const location = form.location.value;
-        const description = form.description.value;
-        const cost = form.cost.value;
-        const season = form.season.value;
-        const time = form.time.value;
-        const visitors = form.visitors.value;
+        const short_description = form.description.value;
+        const average_cost = form.cost.value;
+        const seasonality = form.season.value;
+        const travel_time = form.time.value;
+        const totalVisitorsPerYear = form.visitors.value;
 
         const userSpot = {
-            name, email, image, country, spot, location, description, cost, season, time, visitors
-        }
+            image,
+            tourists_spot_name,
+            country_Name,
+            location,
+            short_description,
+            average_cost,
+            seasonality,
+            travel_time,
+            totalVisitorsPerYear,
+            userEmail,
+            userName
+          } 
         console.log(userSpot);
-
+          fetch('http://localhost:5000/allspots', {
+            method: "POST",
+            headers: {
+                'content-type' : "application/json"
+            },
+            body: JSON.stringify(userSpot)
+          })
+          .then(res => {
+            console.log(res);
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Your Have Added Tourist Spot Successfully",
+                showConfirmButton: false,
+                timer: 1500
+              });
+            form.reset();
+          })
+          .catch(err => {
+            console.log(err);
+          })
         
     }   
 
