@@ -9,7 +9,7 @@ const BannerText = () => {
 
     <p className="text-sm font-sans mt-6 max-w-96">Discover the wonders of Central Asia with Caravan Tales. Explore rich cultures, stunning landscapes, and unforgettable experiences.</p>
 
-    <a href="#featured" className="btn bg-green-400 border-none text-white mt-6">Explore Destinations</a>
+    <a className="btn bg-green-400 border-none text-white mt-6">Explore Destinations</a>
 </div>
 
     );

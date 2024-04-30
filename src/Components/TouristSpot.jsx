@@ -37,7 +37,7 @@ const TouristSpot = ({spot}) => {
 
            <div className="flex gap-1 justify-center items-center">Ratings : <FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStarHalfStroke /> #{seasonality} </div>
 
-           <Link to={`/details`} className="btn bg-green-400 w-full text-white animate__animated animate__pulse animate__infinite	 ">View Details</Link>
+           <Link to={`/details/${_id}`} className="btn bg-green-400 w-full text-white animate__animated animate__pulse animate__infinite	 ">View Details</Link>
 
            
            
